@@ -1,3 +1,30 @@
+# Arthopod
+
+## User story
+
+As a resident of New York, I want to see art but don't know when I will get a chance to see it, or what is nearby. Arthopod allows users to provide their location and will return art exhibitions that are close by (1 mile, 3 mile) and currently open.
+
+## Front End
+
+- React Components
+  - [ ] Map View
+    - [ ] Google Maps
+  - [ ] List View
+  - [ ] Single Exhibition
+  - [ ] About
+
+## Back End
+
+- Tier 1
+  - [ ] Local Node parser
+  - [ ] Local PostgreSQL
+- Tier 2
+  - [ ] Parser on AWS Lambda
+  - [ ] Database on AWS RDS
+
+# Create React App Readme
+
+<details>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +93,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+</details>
