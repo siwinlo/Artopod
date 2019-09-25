@@ -1,7 +1,7 @@
 import React from "react";
 import About from "./About";
-import Map from "./Map";
-import ListItem from "./ListItem";
+import MapComponent from "./MapComponent";
+//import ListItem from "./ListItem";
 
 class Main extends React.Component {
   constructor() {
@@ -29,7 +29,7 @@ class Main extends React.Component {
           {this.state.about ? <About /> : null}
         </div>
         <div className="map">
-          <Map />
+          <MapComponent />
         </div>
         <div className="list-container"></div>
       </div>
