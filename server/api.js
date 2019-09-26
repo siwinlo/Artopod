@@ -1,8 +1,10 @@
 const router = require("express").Router();
+const Exhibitions = require("./models");
 
+// Gets all exhibitions
 router.get("/", async (req, res, next) => {
   try {
-    const exhibitions = await exhibitions.findAll();
+    const exhibitions = await Exhibitions.findAll();
     res.json(exhibitions);
   } catch (err) {
     next(err);

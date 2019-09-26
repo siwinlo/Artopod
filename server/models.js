@@ -3,7 +3,6 @@ const db = require("./db");
 
 //Model definitions
 const Exhibitions = db.define("exhibition", {
-  //exhibition info
   title: {
     type: Sequelize.TEXT,
     allowNull: false
@@ -11,13 +10,11 @@ const Exhibitions = db.define("exhibition", {
   description: {
     type: Sequelize.TEXT
   },
-  //artforumURL: Sequelize.STRING,
   artforumID: Sequelize.INTEGER,
   showStart: Sequelize.DATE,
   showEnd: Sequelize.DATE,
   imgUrl: Sequelize.STRING,
   imgCaption: Sequelize.TEXT,
-  //gallery info
   gallery: Sequelize.STRING,
   galleryDescription: Sequelize.TEXT,
   address: Sequelize.STRING,

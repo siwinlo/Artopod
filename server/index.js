@@ -1,6 +1,6 @@
 const db = require("./db");
 const { Exhibitions } = require("./models");
-const api = require("./apiRoutes");
+const PORT = process.env.PORT || 8080;
 
 const express = require("express");
 const path = require("path");
@@ -10,24 +10,41 @@ const app = express();
 
 // logging middleware
 //app.use(morgan);
+const createApp = () => {
+  // body parsing middleware
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
 
-// body parsing middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+  // static middleware
+  app.use(express.static(path.join(__dirname, "../public")));
 
-// static middleware
-app.use(express.static(path.join(__dirname, "../public")));
+  app.use("/api", require("./api")); // include our routes!
 
-app.use("/api", api); // include our routes!
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  }); // Send index.html for any other requests
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
-}); // Send index.html for any other requests
+  // error handling middleware
+  app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(err.status || 500).send(err.message || "Internal server error");
+  });
+};
 
-// error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(err.status || 500).send(err.message || "Internal server error");
-});
+const startLisening = () => {
+  const server = app.listen(8080, () =>
+    console.log(`Serving it up on port 8080`)
+  );
+};
+
+const syncDb = () => db.sync();
+
+async function bootApp() {
+  await syncDb();
+  await createApp();
+  await startLisening();
+}
+
+bootApp();
 
 module.exports = app;
