@@ -5,6 +5,7 @@ const router = require("express").Router();
 
 //variables
 let numOfPages = 0;
+let globalExhibitions = {};
 
 //gets first page
 async function getFirstPage() {
@@ -19,48 +20,55 @@ async function getFirstPage() {
 getFirstPage();
 
 async function getAllExhibitions() {
+  let allExhibitions = {};
   try {
-    let allExhibitions = {};
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 100; i++) {
+      // 100 is arbitrary, in production it would be numOfPages
       // change to numOfPages
       const res = await axios.get(
         `https://www.artforum.com/api/guide/entities-by-place-location/new-york?category=all&page=${i}&size=1&fetchAll=0`
       );
       const exh = res.data;
       const exhData = exh._embedded.location[0];
-      const exhibition = {
-        title: exhData.title,
-        description: exhData.description,
-        artforumURL: exhData.path,
-        artforumID: exhData.id,
-        showStart: exhData.showStart,
-        showEnd: exhData.showEnd,
-        imgUrl: exhData.images[0].path,
-        imgCaption: exhData.images[0].captionFormatted,
-        //gallery info
-        gallery: exhData.location.name,
-        galleryDescription: exhData.location.description,
-        address: exhData.location.address,
-        city: exhData.location.town,
-        zip: exhData.location.zip,
-        longitude: exhData.location.longitude,
-        latitude: exhData.location.latitude,
-        hours: exhData.location.hours,
-        galleryURL: exhData.location.url,
-        galleryEmail: exhData.location.email,
-        phone: exhData.location.phone,
-        galleryImgPath: exhData.location.primaryImage.path
-      };
-      allExhibitions[i] = await exhibition;
+
+      if (
+        exhData.images[0] === undefined ||
+        exhData.images === undefined ||
+        exhData.location.primaryImage === undefined
+      ) {
+        continue;
+      } else {
+        const exhibition = {
+          title: exhData.title || null,
+          description: exhData.descriptionExtended || null,
+          artforumID: exhData.id || null,
+          showStart: exhData.showStart || null,
+          showEnd: exhData.showEnd || null,
+          imgUrl: exhData.images[0].path || null,
+          imgCaption: exhData.images[0].captionFormatted || null,
+
+          gallery: exhData.location.name || null,
+          galleryDescription: exhData.location.description || null,
+          address: exhData.location.address || null,
+          city: exhData.location.town || null,
+          zip: exhData.location.zip || null,
+          longitude: exhData.location.longitude || null,
+          latitude: exhData.location.latitude || null,
+          hours: exhData.location.hours || null,
+          galleryURL: exhData.location.url || null,
+          galleryEmail: exhData.location.email || null,
+          phone: exhData.location.phone || null
+        };
+        globalExhibitions[i] = exhibition;
+      }
     }
-    const returnExhibitions = await allExhibitions;
-    console.log(returnExhibitions);
+    // console.log(allExhibitions);
+    //return allExhibitions;
+    return globalExhibitions;
   } catch (err) {
     console.log("There was an error finding or creating that exhibition", err);
   }
 }
 
-//WHY CAN I PRINT THIS BUT NOT SAVE IT TO A VARIABLE
-
-getAllExhibitions();
+getAllExhibitions().then(value => console.log(value));
 module.exports = getAllExhibitions;
