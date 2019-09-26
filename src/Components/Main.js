@@ -1,7 +1,7 @@
 import React from "react";
 import About from "./About";
 import MapComponent from "./MapComponent";
-//import ListItem from "./ListItem";
+import List from "./List";
 
 class Main extends React.Component {
   constructor() {
@@ -31,7 +31,9 @@ class Main extends React.Component {
         <div className="map">
           <MapComponent />
         </div>
-        <div className="list-container"></div>
+        <div>
+          <List />
+        </div>
       </div>
     );
   }
