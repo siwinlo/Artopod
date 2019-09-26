@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
+    "eslint": "^6.4.0",
     "express": "^4.17.1",
     "google-map-react": "^1.1.5",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.2",
@@ -14,7 +18,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-dev": "npm run build-watch & npm run start-server",
+    "start-server": "nodemon --watch server main.js -e html,js,css",
+    "build-watch": "webpack -w",
+    "seed": "node server/seed.js"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -5,7 +5,8 @@ class Form extends React.Component {
     super();
     this.state = {
       value: {
-        value: "Where are you?"
+        value: "location",
+        exhQty: 5
       }
     };
     this.handleChange = this.handleChange.bind(this);
