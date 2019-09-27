@@ -16,19 +16,12 @@ class Marker extends React.Component {
   }
 
   render() {
-    const selectedMarker = (
-      <div className="marker-selected" onClick={() => this.handleClick()}>
-        {this.state.mouse ? <MapItem exh={this.props.exh} /> : <RoomIcon />}{" "}
-      </div>
-    );
-
-    const marker = (
-      <div className="marker" onClick={() => this.handleClick()}>
+    const markerClass = this.props.selected ? "marker-selected" : "marker";
+    return (
+      <div className={markerClass} onClick={() => this.handleClick()}>
         {this.state.mouse ? <MapItem exh={this.props.exh} /> : <RoomIcon />}
       </div>
     );
-
-    return this.props.selected === true ? selectedMarker : marker;
   }
 }
 

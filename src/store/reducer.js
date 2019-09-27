@@ -30,7 +30,7 @@ const selectedExhibitions = exhibition => ({
 });
 
 const deselectedExhibitions = exhibition => ({
-  type: SELECT_EXHIBITION,
+  type: DESELECT_EXHIBITION,
   exhibition
 });
 

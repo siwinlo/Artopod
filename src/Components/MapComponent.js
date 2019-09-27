@@ -13,7 +13,7 @@ class MapComponent extends React.Component {
         lat: 40.7485,
         lng: -73.9857
       },
-      zoom: 12
+      zoom: 13
     };
   }
   async componentDidMount() {
@@ -40,7 +40,7 @@ class MapComponent extends React.Component {
                 lat={exh.latitude}
                 lng={exh.longitude}
                 exh={exh}
-                selected={this.state.selected ? true : false}
+                selected={this.props.selected.includes(exh) ? true : false}
               />
             ))}
           </GoogleMapReact>

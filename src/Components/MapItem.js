@@ -11,10 +11,10 @@ class MapItem extends React.Component {
   handleClick(event) {
     const exh = this.props.exh;
     if (this.props.selected.includes(exh)) {
-      deselectExhibition(exh);
+      this.props.deselectExhibition(exh);
       console.log("deselected");
     } else {
-      selectExhibition(exh);
+      this.props.selectExhibition(exh);
       console.log("selected");
     }
   }

@@ -14,10 +14,11 @@ code {
 
 .map-item {
   height: auto;
-  width: 8em;
+  width: 9em;
   background-color: white !important;
   color: black;
   padding: 1em;
+  z-index: 10 !important;
 }
 
 .marker {
