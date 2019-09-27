@@ -17,10 +17,13 @@ class List extends React.Component {
 
   render() {
     return (
-      <div className="list-container">
-        {this.props.selected.map(row => (
-          <ListRow key={row.id} row={row} />
-        ))}
+      <div>
+        <h2>Your Selected Exhibitions</h2>
+        <div className="list-container">
+          {this.props.selected.map(row => (
+            <ListRow key={row.artforumId} row={row} />
+          ))}
+        </div>
       </div>
     );
   }

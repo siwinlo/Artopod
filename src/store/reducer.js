@@ -49,7 +49,7 @@ export const getSelected = exhibitions => async dispatch => {
   dispatch(gotSelected(exhibitions));
 };
 
-export const selectExhibitions = exhibition => async dispatch => {
+export const selectExhibition = exhibition => async dispatch => {
   dispatch(selectedExhibitions(exhibition));
 };
 
@@ -65,7 +65,7 @@ const reducer = (state = initialState, action) => {
     case GOT_SELECTED: {
       return {
         ...state,
-        selected: action.selected
+        selected: state.selected
       };
     }
     case SELECT_EXHIBITION: {

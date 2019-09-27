@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.map-item {
+  height: auto;
+  width: 8em;
+  background-color: white !important;
+  color: black;
+  padding: 1em;
+}
+
+.marker {
+  color: black;
+}
+
+.marker-selected {
+  color: red;
+}
