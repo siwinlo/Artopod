@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const initialState = {
-  userLocation: {},
+  location: {},
   exhibitions: [],
   selected: []
 };
@@ -12,6 +12,7 @@ const GOT_SELECTED = "GOT_SELECTED";
 const SELECT_EXHIBITION = "SELECTED_EXHIBITIONS";
 const DESELECT_EXHIBITION = "DESELECT_EXHIBITION";
 const FAKE_SELECTED = "FAKE_SELECTED";
+const SET_LOCATION = "SET_LOCATION";
 
 // Action creators
 const gotExhibitions = exhibitions => ({
@@ -39,6 +40,11 @@ export const fakeSelected = fake => ({
   fake
 });
 
+export const setLocation = location => ({
+  type: SET_LOCATION,
+  location
+});
+
 // Thunk creators
 export const getExhibitions = () => async dispatch => {
   const { data } = await axios.get("/api/");
@@ -56,6 +62,7 @@ export const selectExhibition = exhibition => async dispatch => {
 export const deselectExhibition = exhibition => async dispatch => {
   dispatch(deselectedExhibitions(exhibition));
 };
+
 // Reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -85,6 +92,9 @@ const reducer = (state = initialState, action) => {
         ...state,
         selected: state.exhibitions.slice(0, 5)
       };
+    }
+    case SET_LOCATION: {
+      return { ...state, location: action.location };
     }
     default: {
       return state;

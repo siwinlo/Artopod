@@ -3,7 +3,7 @@ import GoogleMapReact from "google-map-react";
 import Marker from "./Marker";
 
 import { connect } from "react-redux";
-import { getExhibitions, getSelected } from "../store/reducer";
+import { getExhibitions, getSelected, setLocation } from "../store/reducer";
 
 class MapComponent extends React.Component {
   constructor() {
@@ -13,13 +13,19 @@ class MapComponent extends React.Component {
         lat: 40.7485,
         lng: -73.9857
       },
-      zoom: 13
+      location: {},
+      zoom: 14
     };
   }
   async componentDidMount() {
     await this.props.getExhibitions();
-
     await this.props.getSelected();
+    this.setState({
+      center: {
+        lat: this.props.location.lat,
+        lng: this.props.location.long
+      }
+    });
   }
 
   render() {
@@ -30,7 +36,7 @@ class MapComponent extends React.Component {
             bootstrapURLKeys={{
               key: "AIzaSyCTILRbtZ7JJi2hgtJkL5SoCSJ0Tq9mwPA"
             }}
-            defaultCenter={this.state.center}
+            center={this.state.center}
             defaultZoom={this.state.zoom}
           >
             {this.props.exhibitions.map(exh => (
@@ -51,7 +57,8 @@ class MapComponent extends React.Component {
 
 const mapStateToProps = state => ({
   exhibitions: state.exhibitions,
-  selected: state.selected
+  selected: state.selected,
+  location: state.location
 });
 
 const mapDispatchToProps = dispatch => ({

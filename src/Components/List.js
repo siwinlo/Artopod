@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import ListRow from "./ListRow";
 import { getExhibitions, getSelected } from "../store/reducer";
-import Form from "./Form";
+//import Form from "./Form";
 import About from "./About";
 
 class List extends React.Component {
@@ -31,7 +31,7 @@ class List extends React.Component {
           <h1 onClick={this.toggleAbout}>Artopod</h1>
           <div className="about">{this.state.about ? <About /> : null}</div>
 
-          <Form />
+          {/* <Form /> */}
         </div>
         <div className="list-container">
           {this.props.selected.length > 0 ? (
