@@ -25,10 +25,9 @@ class Form extends React.Component {
     return (
       <div className="map-input">
         <form>
-          <label>
-            Where are you?
-            <input type="text" name="place" />
-          </label>
+          <label>Where are you? </label>
+          <input type="text" name="place" />
+
           <input type="submit" value="submit" />
         </form>
       </div>
