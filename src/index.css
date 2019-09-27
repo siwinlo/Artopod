@@ -11,6 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.deselect-icon {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: lightgray;
+}
+.deselect-icon:hover {
+  color: #fa4616;
+}
 
 form {
   width: 100%;
@@ -27,12 +36,18 @@ label {
 .list-container {
   height: 80vh;
   grid-area: list;
-  padding: 2em;
+  padding: 1em;
   overflow: scroll;
 }
 
 .list-row {
+  position: relative;
   text-align: left;
+}
+
+.list-row-info {
+  margin: 1em;
+  padding: 0 0 0 1.5em;
 }
 
 .main-container {
@@ -50,7 +65,17 @@ label {
 
 .map-container {
   grid-area: map;
-  position: sticky;
+}
+
+.map-deselect-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: lightgray;
+}
+
+.map-deselect-icon:hover {
+  color: #fa4616;
 }
 
 .map-item {
@@ -58,17 +83,19 @@ label {
   min-width: 9em;
   background-color: white !important;
   color: black;
-  padding: 1em;
+  padding: 1.5em;
+  border-radius: 1.5em;
   z-index: 10 !important;
-  font-size: 1em;
+  font-size: 1.3em;
+  position: relative;
 }
 
 .marker {
-  color: black;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .marker-selected {
-  color: red;
+  color: #fa4616;
 }
 
 p {

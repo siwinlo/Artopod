@@ -1,5 +1,6 @@
 import React from "react";
-
+// add radio button for "open now"
+//drop down menu for neighborhood
 class Form extends React.Component {
   constructor() {
     super();
