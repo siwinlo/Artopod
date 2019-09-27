@@ -34,13 +34,12 @@ class List extends React.Component {
           <Form />
         </div>
         <div className="list-container">
-          <h3>Your selected exhibitions</h3>
           {this.props.selected.length > 0 ? (
             this.props.selected.map(row => (
               <ListRow key={row.id * Math.random()} row={row} />
             ))
           ) : (
-            <p>Select some exhibitions to begin!</p>
+            <h3>Select some exhibitions to begin!</h3>
           )}
         </div>
       </div>

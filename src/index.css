@@ -30,14 +30,22 @@ code {
 }
 
 em {
+  font-family: "DM Serif Display", serif;
   font-style: italic;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 700;
 }
 form {
   width: 100%;
 }
 
+h1 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5em;
+}
+h3 {
+  font-family: "DM Serif Display", serif;
+}
 h1:hover {
   color: #fa4616;
   transition: color 0.3s ease;
