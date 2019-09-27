@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { selectExhibition, deselectExhibition } from "../store/reducer";
+import CancelIcon from "@material-ui/icons/Cancel";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 class MapItem extends React.Component {
   constructor(props) {
@@ -12,22 +14,28 @@ class MapItem extends React.Component {
     const exh = this.props.exh;
     if (this.props.selected.includes(exh)) {
       this.props.deselectExhibition(exh);
-      console.log("deselected");
     } else {
       this.props.selectExhibition(exh);
-      console.log("selected");
     }
   }
 
   render() {
     const exh = this.props.exh;
-    const message = this.props.selected.includes(exh) ? "Deselect" : "Select";
 
     return (
       <div className="map-item">
-        <p>{exh.title}</p>
+        <div className="map-deselect-icon" onClick={this.handleClick}>
+          {this.props.selected.includes(exh) ? (
+            <CancelIcon />
+          ) : (
+            <CheckCircleIcon />
+          )}
+        </div>
+
+        <p>
+          <i>{exh.title}</i>
+        </p>
         <p>{exh.gallery}</p>
-        <p onClick={this.handleClick}>{message}</p>
       </div>
     );
   }

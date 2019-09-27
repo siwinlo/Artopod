@@ -1,5 +1,6 @@
 import React from "react";
-
+// add radio button for "open now"
+//drop down menu for neighborhood
 class Form extends React.Component {
   constructor() {
     super();
@@ -24,10 +25,9 @@ class Form extends React.Component {
     return (
       <div className="map-input">
         <form>
-          <label>
-            Where are you?
-            <input type="text" name="place" />
-          </label>
+          <label>Where are you? </label>
+          <input type="text" name="place" />
+
           <input type="submit" value="submit" />
         </form>
       </div>

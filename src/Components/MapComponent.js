@@ -1,9 +1,9 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import Marker from "./Marker";
-import Form from "./Form";
+
 import { connect } from "react-redux";
-import { getExhibitions, getSelected, fakeSelected } from "../store/reducer";
+import { getExhibitions, getSelected } from "../store/reducer";
 
 class MapComponent extends React.Component {
   constructor() {
@@ -18,15 +18,14 @@ class MapComponent extends React.Component {
   }
   async componentDidMount() {
     await this.props.getExhibitions();
-    // await this.props.fakeSelected();
+
     await this.props.getSelected();
   }
 
   render() {
     return (
       <div className="map-container">
-        <Form />
-        <div id="map" style={{ height: "70vh", width: "70vh" }}>
+        <div id="map">
           <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyCTILRbtZ7JJi2hgtJkL5SoCSJ0Tq9mwPA"
@@ -58,7 +57,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getExhibitions: () => dispatch(getExhibitions()),
   getSelected: () => dispatch(getSelected())
-  //fakeSelected: () => dispatch(fakeSelected())
 });
 
 export default connect(

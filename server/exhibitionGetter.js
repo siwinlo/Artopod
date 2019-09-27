@@ -44,7 +44,7 @@ async function getAllExhibitions() {
           artforumID: exhData.id || null,
           showStart: exhData.showStart || null,
           showEnd: exhData.showEnd || null,
-          imgUrl: exhData.images[0].path || null,
+          imgUrl: exhData.images[0].pathLarge || null,
           imgCaption: exhData.images[0].captionFormatted || null,
 
           gallery: exhData.location.name || null,
@@ -59,7 +59,7 @@ async function getAllExhibitions() {
           galleryEmail: exhData.location.email || null,
           phone: exhData.location.phone || null
         };
-        globalExhibitions[i] = exhibition;
+        globalExhibitions[exhData.id] = exhibition;
       }
     }
     // console.log(allExhibitions);
