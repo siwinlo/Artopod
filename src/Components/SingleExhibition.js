@@ -10,18 +10,23 @@ function SingleExhibition(props) {
   const end = DateTime.fromISO(exh.showEnd)
     .setLocale("en-US")
     .toLocaleString(format);
-
   const imgUrl = `https://artforum.com${exh.imgUrl}`;
+
   return (
     <div className="about body">
       <em>{exh.title}</em>
-      <p>{exh.description}</p>
+      <p className="multi-line">{exh.description}</p>
       <p>
         Open {open} to {end}
       </p>
       <p>{exh.hours}</p>
-      <img src={imgUrl} alt="Image could not be found 🖼"></img>
-      <p>{exh.gallery}</p>
+      <img
+        src={imgUrl}
+        alt={exh.imgCaption}
+        className="single-exhibition-image"
+      ></img>
+      <p>{exh.imgCaption}</p>
+      <em>{exh.gallery}</em>
       <p>
         Address: {exh.address}, {exh.city}, {exh.zip}
       </p>
