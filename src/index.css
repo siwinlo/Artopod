@@ -12,6 +12,33 @@ code {
     monospace;
 }
 
+.list-container {
+  height: 80vh;
+  grid-area: list;
+  padding: 2em;
+  overflow: scroll;
+}
+
+.list-row {
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-areas: map map map list list;
+}
+
+#map {
+  z-index: 0;
+}
+
+.map-container {
+  grid-area: map;
+  position: sticky;
+}
+
 .map-item {
   height: auto;
   width: 9em;

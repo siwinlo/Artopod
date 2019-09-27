@@ -28,11 +28,13 @@ class Main extends React.Component {
           </button>
           {this.state.about ? <About /> : null}
         </div>
-        <div className="map">
-          <MapComponent />
-        </div>
-        <div>
-          <List />
+        <div className="main-container">
+          <div>
+            <MapComponent />
+          </div>
+          <div>
+            <List />
+          </div>
         </div>
       </div>
     );

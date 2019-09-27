@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ListRow from "./ListRow";
-import { getExhibitions, getSelected, fakeSelected } from "../store/reducer";
+import { getExhibitions, getSelected } from "../store/reducer";
 
 class List extends React.Component {
   constructor(props) {
@@ -12,16 +12,15 @@ class List extends React.Component {
   }
   async componentDidMount() {
     await this.props.getExhibitions();
-    await this.props.fakeSelected();
+    await this.props.getSelected();
   }
 
   render() {
     return (
       <div>
-        <h2>Your Selected Exhibitions</h2>
         <div className="list-container">
           {this.props.selected.map(row => (
-            <ListRow key={row.artforumId} row={row} />
+            <ListRow key={row.id * Math.random()} row={row} />
           ))}
         </div>
       </div>
@@ -36,8 +35,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getExhibitions: () => dispatch(getExhibitions()),
-  getSelected: () => dispatch(getSelected()),
-  fakeSelected: () => dispatch(fakeSelected())
+  getSelected: () => dispatch(getSelected())
 });
 
 export default connect(
