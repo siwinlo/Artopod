@@ -1,12 +1,10 @@
 import React from "react";
 
-function ListRow() {
-  const show = this.props.row;
+const ListRow = props => {
   return (
-    <div>
-      <h3>{row.title}</h3>
-      <p>{row.description}</p>
+    <div className="list-row">
+      <p>{props.row.title}</p>
     </div>
   );
-}
+};
 export default ListRow;

@@ -32,8 +32,8 @@ const createApp = () => {
 };
 
 const startLisening = () => {
-  const server = app.listen(8080, () =>
-    console.log(`Serving it up on port 8080`)
+  const server = app.listen(3001, () =>
+    console.log(`Serving it up on port 3001`)
   );
 };
 
