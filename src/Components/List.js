@@ -39,7 +39,7 @@ class List extends React.Component {
               <ListRow key={row.id * Math.random()} row={row} />
             ))
           ) : (
-            <h3>Select some exhibitions to begin!</h3>
+            <h3>Select some exhibitions to begin</h3>
           )}
         </div>
       </div>

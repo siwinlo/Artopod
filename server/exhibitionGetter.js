@@ -22,8 +22,8 @@ getFirstPage();
 async function getAllExhibitions() {
   let allExhibitions = {};
   try {
-    for (let i = 0; i < 100; i++) {
-      // 100 is arbitrary, in production it would be numOfPages
+    for (let i = 0; i < 250; i++) {
+      // 450 is arbitrary, in production it would be numOfPages
       // change to numOfPages
       const res = await axios.get(
         `https://www.artforum.com/api/guide/entities-by-place-location/new-york?category=all&page=${i}&size=1&fetchAll=0`
@@ -62,8 +62,7 @@ async function getAllExhibitions() {
         globalExhibitions[exhData.id] = exhibition;
       }
     }
-    // console.log(allExhibitions);
-    //return allExhibitions;
+
     return globalExhibitions;
   } catch (err) {
     console.log("There was an error finding or creating that exhibition", err);

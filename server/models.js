@@ -5,11 +5,9 @@ const db = require("./db");
 const Exhibitions = db.define("exhibition", {
   title: {
     type: Sequelize.TEXT,
-    allowNull: false
+    defaultValue: "untitled"
   },
-  description: {
-    type: Sequelize.TEXT
-  },
+  description: Sequelize.TEXT,
   artforumID: Sequelize.INTEGER,
   showStart: Sequelize.DATE,
   showEnd: Sequelize.DATE,
