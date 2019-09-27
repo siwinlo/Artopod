@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import Marker from "./Marker";
-import Form from "./Form";
+
 import { connect } from "react-redux";
 import { getExhibitions, getSelected } from "../store/reducer";
 
@@ -25,14 +25,7 @@ class MapComponent extends React.Component {
   render() {
     return (
       <div className="map-container">
-        <Form />
-        <div
-          id="map"
-          style={{
-            height: "80vh",
-            width: "70vw"
-          }}
-        >
+        <div id="map">
           <GoogleMapReact
             bootstrapURLKeys={{
               key: "AIzaSyCTILRbtZ7JJi2hgtJkL5SoCSJ0Tq9mwPA"

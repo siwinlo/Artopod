@@ -23,7 +23,9 @@ class MapItem extends React.Component {
 
     return (
       <div className="map-item">
-        <p>{exh.title}</p>
+        <p>
+          <i>{exh.title}</i>
+        </p>
         <p>{exh.gallery}</p>
         <p onClick={this.handleClick}>{message}</p>
       </div>
