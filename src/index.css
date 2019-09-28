@@ -89,8 +89,8 @@ label {
 
 .map-deselect-icon {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: 0;
+  right: 0;
   color: lightgray;
 }
 
@@ -98,10 +98,22 @@ label {
   color: #fa4616;
 }
 
+.map-select-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: lightgray;
+}
+
+.map-select-icon:hover {
+  color: #79d97c;
+}
+
 .map-item {
   height: auto;
   min-width: 9em;
   background-color: white !important;
+  border-radius: 2px;
   color: black;
   padding: 1em;
   z-index: 10 !important;

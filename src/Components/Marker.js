@@ -1,6 +1,7 @@
 import React from "react";
 import RoomIcon from "@material-ui/icons/Room";
 import MapItem from "./MapItem";
+import MapComponent from "./MapComponent";
 
 class Marker extends React.Component {
   constructor(props) {
@@ -9,9 +10,21 @@ class Marker extends React.Component {
       mouse: false
     };
     this.handleClick = this.handleClick.bind(this);
+    this.unShow = this.unShow.bind(this);
   }
 
-  handleClick() {
+  componentDidMount() {
+    document.addEventListener("mouseup", this.unShow);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mouseup", this.unShow);
+  }
+
+  unShow(e) {
+    this.setState({ mouse: false });
+  }
+  handleClick(e) {
     this.setState({ mouse: !this.state.mouse });
   }
 
