@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { deselectExhibition } from "../store/reducer";
 
-import CancelIcon from "@material-ui/icons/Cancel";
+import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox";
 import SingleExhibition from "./SingleExhibition";
 
 class ListRow extends React.Component {
@@ -27,7 +27,7 @@ class ListRow extends React.Component {
     return (
       <div className="list-row">
         <div className="deselect-icon" onClick={this.handleClick}>
-          <CancelIcon />
+          <IndeterminateCheckBoxIcon />
         </div>
         <div className="list-row-info" onClick={this.toggleSingleView}>
           {!this.state.singleView ? (
@@ -37,6 +37,7 @@ class ListRow extends React.Component {
               </p>
 
               <p>{this.props.row.hours}</p>
+              <p>{this.props.row.distance.toFixed(2)}mi away</p>
             </div>
           ) : (
             <SingleExhibition exh={this.props.row} />

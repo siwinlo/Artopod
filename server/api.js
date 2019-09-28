@@ -4,6 +4,7 @@ const Exhibitions = require("./models");
 // Gets all exhibitions
 router.get("/", async (req, res, next) => {
   try {
+    console.log("hi");
     const exhibitions = await Exhibitions.findAll();
     res.json(exhibitions);
   } catch (err) {
