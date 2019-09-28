@@ -14,7 +14,6 @@ class List extends React.Component {
     this.toggleAbout = this.toggleAbout.bind(this);
   }
   async componentDidMount() {
-    await this.props.getExhibitions();
     await this.props.getSelected();
   }
 

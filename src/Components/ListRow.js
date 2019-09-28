@@ -24,6 +24,7 @@ class ListRow extends React.Component {
   }
 
   render() {
+    console.log("list-row props", this.props.row);
     return (
       <div className="list-row">
         <div className="deselect-icon" onClick={this.handleClick}>
@@ -37,6 +38,7 @@ class ListRow extends React.Component {
               </p>
 
               <p>{this.props.row.hours}</p>
+              <p>{this.props.row.distance}</p>
             </div>
           ) : (
             <SingleExhibition exh={this.props.row} />

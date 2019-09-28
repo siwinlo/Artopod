@@ -1,7 +1,11 @@
 import axios from "axios";
+import { distances } from "./distances";
 
 const initialState = {
-  location: {},
+  location: {
+    lat: 40.7485,
+    lng: -73.9857
+  },
   exhibitions: [],
   selected: []
 };
@@ -13,6 +17,8 @@ const SELECT_EXHIBITION = "SELECTED_EXHIBITIONS";
 const DESELECT_EXHIBITION = "DESELECT_EXHIBITION";
 const FAKE_SELECTED = "FAKE_SELECTED";
 const SET_LOCATION = "SET_LOCATION";
+const GET_DISTANCES = "GET_DISTANCES";
+const SET_CLOSEST = "SET_CLOSEST";
 
 // Action creators
 const gotExhibitions = exhibitions => ({
@@ -45,10 +51,31 @@ export const setLocation = location => ({
   location
 });
 
+// export const gotDistances = location => ({
+//   type: GET_DISTANCES,
+//   location
+// });
+
+const setTheClosest = location => ({
+  type: SET_CLOSEST,
+  location
+});
+
 // Thunk creators
-export const getExhibitions = () => async dispatch => {
+export const getExhibitions = location => async dispatch => {
+  console.log("FROM GET EXHIBITION", location);
   const { data } = await axios.get("/api/");
-  dispatch(gotExhibitions(data));
+  const sortedData = data
+    .map(exh => ({
+      ...exh,
+      distance: distances(
+        [location.lat, location.longitude],
+        [exh.lat, exh.longitude],
+        true
+      )
+    }))
+    .sort((a, b) => a.distance < b.distance);
+  dispatch(gotExhibitions(sortedData));
 };
 
 export const getSelected = exhibitions => async dispatch => {
@@ -61,6 +88,11 @@ export const selectExhibition = exhibition => async dispatch => {
 
 export const deselectExhibition = exhibition => async dispatch => {
   dispatch(deselectedExhibitions(exhibition));
+};
+
+export const setClosest = location => async dispatch => {
+  // gotDistances(location);
+  dispatch(setTheClosest(location));
 };
 
 // Reducer
@@ -95,6 +127,27 @@ const reducer = (state = initialState, action) => {
     }
     case SET_LOCATION: {
       return { ...state, location: action.location };
+    }
+    case GET_DISTANCES: {
+      return {
+        ...state,
+        exhibitions: state.exhibitions
+          .map(
+            exh =>
+              (exh.distance = distances(
+                [action.location.lat, action.location.longitude],
+                [exh.lat, exh.longitude],
+                true
+              ))
+          )
+          .sort((a, b) => a.distance < b.distance)
+      };
+    }
+    case SET_CLOSEST: {
+      return {
+        ...state,
+        selected: [...state.selected, ...state.exhibitions.slice(0, 10)]
+      };
     }
     default: {
       return state;

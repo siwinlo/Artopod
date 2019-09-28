@@ -3,29 +3,26 @@ import GoogleMapReact from "google-map-react";
 import Marker from "./Marker";
 
 import { connect } from "react-redux";
-import { getExhibitions, getSelected, setLocation } from "../store/reducer";
+import { getExhibitions, getSelected, setClosest } from "../store/reducer";
 
 class MapComponent extends React.Component {
   constructor() {
     super();
     this.state = {
       center: {
-        lat: 40.7485,
-        lng: -73.9857
+        lat: 0,
+        lng: 0
       },
-      location: {},
       zoom: 14
     };
   }
   async componentDidMount() {
-    await this.props.getExhibitions();
+    await this.props.getExhibitions(this.state.center);
     await this.props.getSelected();
     this.setState({
-      center: {
-        lat: this.props.location.lat,
-        lng: this.props.location.long
-      }
+      center: this.props.location
     });
+    await this.props.setClosest(this.state.center);
   }
 
   render() {
@@ -62,8 +59,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getExhibitions: () => dispatch(getExhibitions()),
-  getSelected: () => dispatch(getSelected())
+  getExhibitions: location => dispatch(getExhibitions(location)),
+  getSelected: () => dispatch(getSelected()),
+  setClosest: location => dispatch(setClosest(location))
 });
 
 export default connect(
