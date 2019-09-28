@@ -51,11 +51,6 @@ export const setLocation = location => ({
   location
 });
 
-// export const gotDistances = location => ({
-//   type: GET_DISTANCES,
-//   location
-// });
-
 const setTheClosest = location => ({
   type: SET_CLOSEST,
   location
@@ -63,14 +58,13 @@ const setTheClosest = location => ({
 
 // Thunk creators
 export const getExhibitions = location => async dispatch => {
-  console.log("FROM GET EXHIBITION", location);
   const { data } = await axios.get("/api/");
   const sortedData = data
     .map(exh => ({
       ...exh,
       distance: distances(
-        [location.lat, location.longitude],
-        [exh.lat, exh.longitude],
+        [location.lat, location.lng],
+        [exh.lat, exh.lng],
         true
       )
     }))
@@ -91,7 +85,6 @@ export const deselectExhibition = exhibition => async dispatch => {
 };
 
 export const setClosest = location => async dispatch => {
-  // gotDistances(location);
   dispatch(setTheClosest(location));
 };
 
@@ -135,8 +128,8 @@ const reducer = (state = initialState, action) => {
           .map(
             exh =>
               (exh.distance = distances(
-                [action.location.lat, action.location.longitude],
-                [exh.lat, exh.longitude],
+                [action.location.lat, action.location.lng],
+                [exh.lat, exh.lng],
                 true
               ))
           )

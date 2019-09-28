@@ -34,9 +34,7 @@ class List extends React.Component {
         </div>
         <div className="list-container">
           {this.props.selected.length > 0 ? (
-            this.props.selected.map(row => (
-              <ListRow key={row.id * Math.random()} row={row} />
-            ))
+            this.props.selected.map(row => <ListRow key={row.id} row={row} />)
           ) : (
             <h3>Select some exhibitions to begin</h3>
           )}
