@@ -3,8 +3,8 @@ import { distances } from "./distances";
 
 const initialState = {
   location: {
-    lat: 40.7485,
-    lng: -73.9857
+    lat: 0,
+    lng: 0
   },
   exhibitions: [],
   selected: []
@@ -46,7 +46,7 @@ export const fakeSelected = fake => ({
   fake
 });
 
-export const setLocation = location => ({
+const setTheLocation = location => ({
   type: SET_LOCATION,
   location
 });
@@ -58,6 +58,7 @@ const setTheClosest = location => ({
 
 // Thunk creators
 export const getExhibitions = location => async dispatch => {
+  console.log(location);
   const { data } = await axios.get("/api/");
   const sortedData = data
     .map(exh => ({
@@ -68,7 +69,7 @@ export const getExhibitions = location => async dispatch => {
         true
       )
     }))
-    .sort((a, b) => a.distance < b.distance);
+    .sort((a, b) => (a.distance > b.distance ? 1 : -1));
   dispatch(gotExhibitions(sortedData));
 };
 
@@ -84,6 +85,10 @@ export const deselectExhibition = exhibition => async dispatch => {
   dispatch(deselectedExhibitions(exhibition));
 };
 
+export const setLocation = location => async dispatch => {
+  dispatch(setTheLocation(location));
+};
+
 export const setClosest = location => async dispatch => {
   dispatch(setTheClosest(location));
 };
@@ -92,7 +97,10 @@ export const setClosest = location => async dispatch => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GOT_EXHIBITIONS: {
-      return { ...state, exhibitions: action.exhibitions };
+      return {
+        ...state,
+        exhibitions: action.exhibitions
+      };
     }
     case GOT_SELECTED: {
       return {
@@ -103,7 +111,7 @@ const reducer = (state = initialState, action) => {
     case SELECT_EXHIBITION: {
       return {
         ...state,
-        selected: [...state.selected, action.exhibition]
+        selected: [action.exhibition, ...state.selected]
       };
     }
     case DESELECT_EXHIBITION: {

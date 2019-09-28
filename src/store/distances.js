@@ -25,6 +25,6 @@ export const distances = (latlngA, latlngB, isMiles) => {
   if (isMiles) {
     finalDistance /= 1.60934;
   }
-  console.log("DISTANCE CALLED");
+
   return finalDistance;
 };

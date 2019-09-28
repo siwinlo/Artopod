@@ -37,7 +37,7 @@ class ListRow extends React.Component {
               </p>
 
               <p>{this.props.row.hours}</p>
-              <p>{this.props.row.distance || ""}</p>
+              <p>{this.props.row.distance.toFixed(2)}mi away</p>
             </div>
           ) : (
             <SingleExhibition exh={this.props.row} />

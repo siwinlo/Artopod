@@ -137,6 +137,9 @@ p {
   font-size: 0.8em;
 }
 
+.person-pin {
+  color: gold;
+}
 .single-exhibition-image {
   width: 95%;
 }

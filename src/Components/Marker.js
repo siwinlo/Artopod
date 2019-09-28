@@ -1,7 +1,6 @@
 import React from "react";
 import RoomIcon from "@material-ui/icons/Room";
 import MapItem from "./MapItem";
-import MapComponent from "./MapComponent";
 
 class Marker extends React.Component {
   constructor(props) {
