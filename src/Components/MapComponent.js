@@ -2,7 +2,7 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 import Marker from "./Marker";
 import { PersonPin } from "./PersonPin";
-
+import { Loading } from "./Loading";
 import { connect } from "react-redux";
 import {
   getExhibitions,
@@ -46,7 +46,7 @@ class MapComponent extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return null;
+      return <Loading />;
     }
     return (
       <div className="map-container">

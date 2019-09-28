@@ -58,7 +58,6 @@ const setTheClosest = location => ({
 
 // Thunk creators
 export const getExhibitions = location => async dispatch => {
-  console.log(location);
   const { data } = await axios.get("/api/");
   const sortedData = data
     .map(exh => ({
@@ -147,7 +146,7 @@ const reducer = (state = initialState, action) => {
     case SET_CLOSEST: {
       return {
         ...state,
-        selected: [...state.selected, ...state.exhibitions.slice(0, 10)]
+        selected: [...state.selected, ...state.exhibitions.slice(0, 5)]
       };
     }
     default: {
