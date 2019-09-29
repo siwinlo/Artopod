@@ -2,7 +2,8 @@
   "name": "artopod",
   "version": "0.1.0",
   "engines": {
-    "node": "12.7.0"
+    "node": "12.7.0",
+    "npm": "6.11.3"
   },
   "private": true,
   "proxy": "http://prod.82tzcisbbm.us-east-1.elasticbeanstalk.com/",
