@@ -15,16 +15,16 @@ const createApp = () => {
   // static middleware
   app.use(express.static(path.join(__dirname, "../public")));
 
-  app.use("/api", require("./api")); // include our routes!
-
   app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "siwinlo.github.io");
+    res.header("Access-Control-Allow-Origin", "https://siwinlo.github.io");
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept"
     );
     next();
   });
+
+  app.use("/api", require("./api")); // include our routes!
 
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
