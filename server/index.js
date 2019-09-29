@@ -29,7 +29,7 @@ const createApp = () => {
 };
 
 const startLisening = () => {
-  const server = app.listen(resource.env.PORT, () =>
+  const server = app.listen(3000, () =>
     console.log(`Serving it up on resource.env.PORT`)
   );
 };
