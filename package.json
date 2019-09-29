@@ -33,7 +33,9 @@
     "start-server": "node server/index.js",
     "build-watch": "webpack -w",
     "seed": "node server/seed.js",
-    "homepage": "http://siwinlo.github.io/Artopod"
+    "homepage": "http://siwinlo.github.io/Artopod",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +53,7 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^4.1.2"
+    "concurrently": "^4.1.2",
+    "gh-pages": "^2.1.1"
   }
 }
