@@ -1,11 +1,10 @@
+console.log("hello");
 const db = require("./db");
-const { Exhibitions } = require("./models");
-const PORT = process.env.PORT || 8080;
-
 const express = require("express");
 const path = require("path");
 //const morgan = require("morgan");
 
+console.log("howdy");
 const app = express();
 
 // logging middleware
@@ -32,9 +31,7 @@ const createApp = () => {
 };
 
 const startLisening = () => {
-  const server = app.listen(3001, () =>
-    console.log(`Serving it up on port 3001`)
-  );
+  const server = app.listen(80, () => console.log(`Serving it up on port 80`));
 };
 
 const syncDb = () => db.sync();
