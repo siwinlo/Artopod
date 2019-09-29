@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Artopod/static/css/main.93cfb203.chunk.css",
-    "main.js": "/Artopod/static/js/main.5df11339.chunk.js",
-    "main.js.map": "/Artopod/static/js/main.5df11339.chunk.js.map",
+    "main.css": "/Artopod/static/css/main.15fea1fa.chunk.css",
+    "main.js": "/Artopod/static/js/main.e6f52172.chunk.js",
+    "main.js.map": "/Artopod/static/js/main.e6f52172.chunk.js.map",
     "runtime-main.js": "/Artopod/static/js/runtime-main.1b824805.js",
     "runtime-main.js.map": "/Artopod/static/js/runtime-main.1b824805.js.map",
-    "static/js/2.dc4193ec.chunk.js": "/Artopod/static/js/2.dc4193ec.chunk.js",
-    "static/js/2.dc4193ec.chunk.js.map": "/Artopod/static/js/2.dc4193ec.chunk.js.map",
+    "static/js/2.3f9a5ba8.chunk.js": "/Artopod/static/js/2.3f9a5ba8.chunk.js",
+    "static/js/2.3f9a5ba8.chunk.js.map": "/Artopod/static/js/2.3f9a5ba8.chunk.js.map",
     "index.html": "/Artopod/index.html",
-    "precache-manifest.a898f2e4509ee5073abad1108be63bd7.js": "/Artopod/precache-manifest.a898f2e4509ee5073abad1108be63bd7.js",
+    "precache-manifest.e40fec92776b58bd8551d80b8949df34.js": "/Artopod/precache-manifest.e40fec92776b58bd8551d80b8949df34.js",
     "service-worker.js": "/Artopod/service-worker.js",
-    "static/css/main.93cfb203.chunk.css.map": "/Artopod/static/css/main.93cfb203.chunk.css.map"
+    "static/css/main.15fea1fa.chunk.css.map": "/Artopod/static/css/main.15fea1fa.chunk.css.map"
   }
 }
