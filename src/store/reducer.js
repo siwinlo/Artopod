@@ -58,9 +58,7 @@ const setTheClosest = location => ({
 
 // Thunk creators
 export const getExhibitions = location => async dispatch => {
-  const { data } = await axios.get(
-    "http://prod.82tzcisbbm.us-east-1.elasticbeanstalk.com/api"
-  );
+  const { data } = await axios.get("https://artopod.herokuapp.com/api");
   const sortedData = data
     .map(exh => ({
       ...exh,
