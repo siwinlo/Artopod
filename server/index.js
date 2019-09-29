@@ -17,6 +17,15 @@ const createApp = () => {
 
   app.use("/api", require("./api")); // include our routes!
 
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "siwinlo.github.io");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   }); // Send index.html for any other requests
