@@ -1,6 +1,9 @@
 {
   "name": "artopod",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.7.0"
+  },
   "private": true,
   "proxy": "http://prod.82tzcisbbm.us-east-1.elasticbeanstalk.com/",
   "homepage": "https://siwinlo.github.io/Artopod",
