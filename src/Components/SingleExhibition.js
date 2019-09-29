@@ -14,7 +14,12 @@ function SingleExhibition(props) {
 
   return (
     <div className="about body">
-      <em>{exh.title}</em>
+      <p>
+        <em>{exh.title}</em> at {exh.gallery}
+      </p>
+
+      <p>{exh.hours}</p>
+      <p>{exh.distance.toFixed(2)}mi away</p>
       <p className="multi-line">{exh.description}</p>
       <p>
         Open {open} to {end}

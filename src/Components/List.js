@@ -45,7 +45,7 @@ class List extends React.Component {
           {this.props.selected.length > 0 ? (
             this.props.selected.map(row => <ListRow key={row.id} row={row} />)
           ) : (
-            <h3>{this.state.message}</h3>
+            <h3 className="loading">{this.state.message}</h3>
           )}
         </div>
       </div>

@@ -1,5 +1,7 @@
 a {
   font-style: italic;
+  text-decoration: none;
+  color: black;
 }
 
 a:hover {
@@ -46,6 +48,7 @@ form {
 h1 {
   font-family: "DM Serif Display", serif;
   font-size: 2.5em;
+  background-color: white;
 }
 h3 {
   font-family: "DM Serif Display", serif;
@@ -59,7 +62,7 @@ label {
   font-size: 0.8em;
 }
 .list-container {
-  height: 80vh;
+  height: 100%;
   grid-area: list;
   padding: 0 1em auto 1em;
   overflow: scroll;
@@ -165,6 +168,7 @@ p {
     background: white;
     position: fixed;
     top: 0;
+    z-index: 10 !important;
   }
 
   h1 {
@@ -172,7 +176,7 @@ p {
   }
 
   .list-container {
-    height: 80vh;
+    height: auto;
     grid-area: list;
     padding: 0 1em auto 1em;
     overflow: hidden;

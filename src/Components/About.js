@@ -5,7 +5,7 @@ function About() {
     <div className="about body">
       <p>
         Artopod is a single-page application by
-        <a href="https://siwinlo.github.io">Siwin Lo</a>, which finds the 5
+        <a href="https://siwinlo.github.io"> Siwin Lo</a>, which finds the 5
         closes art exhibitions to you, and lets you take it from there
       </p>
       <p>

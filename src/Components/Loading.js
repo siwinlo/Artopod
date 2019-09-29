@@ -14,6 +14,9 @@ export function Loading() {
   return (
     <div className="loading">
       <h3>Mapping exhibitions near you!</h3>
+      <p>
+        If nothing seems to be happening, please check that location is enabled!
+      </p>
       <CircularProgress className={classes.progress} />
     </div>
   );
