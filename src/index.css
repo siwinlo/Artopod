@@ -167,12 +167,23 @@ p {
     top: 0;
   }
 
+  h1 {
+    font-size: 1.3em;
+  }
+
+  .list-container {
+    height: 80vh;
+    grid-area: list;
+    padding: 0 1em auto 1em;
+    overflow: hidden;
+  }
+
   .main-container {
     display: flex;
     flex-direction: column;
   }
   #map {
-    height: 80vh;
+    height: 65vh;
     width: 100%;
   }
 }

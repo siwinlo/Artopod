@@ -2,16 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import ListRow from "./ListRow";
 import { getExhibitions, getSelected } from "../store/reducer";
-//import Form from "./Form";
 import About from "./About";
 
 class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      about: false
+      about: false,
+      loading: true,
+      message: "Finding exhibitions near you"
     };
     this.toggleAbout = this.toggleAbout.bind(this);
+    this.isLoading = this.isLoading.bind(this);
   }
   async componentDidMount() {
     await this.props.getSelected();
@@ -23,20 +25,27 @@ class List extends React.Component {
     });
   }
 
+  isLoading() {
+    if (this.props.exhibitions.length > 0) {
+      this.setState({
+        loading: false,
+        message: "Select exhibitions from the map"
+      });
+    }
+  }
+
   render() {
     return (
       <div>
         <div className="banner">
           <h1 onClick={this.toggleAbout}>Artopod</h1>
           <div className="about">{this.state.about ? <About /> : null}</div>
-
-          {/* <Form /> */}
         </div>
         <div className="list-container">
           {this.props.selected.length > 0 ? (
             this.props.selected.map(row => <ListRow key={row.id} row={row} />)
           ) : (
-            <h3>Select some exhibitions to begin</h3>
+            <h3>{this.state.message}</h3>
           )}
         </div>
       </div>

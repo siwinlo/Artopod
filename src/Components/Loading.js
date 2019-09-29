@@ -13,6 +13,7 @@ export function Loading() {
 
   return (
     <div className="loading">
+      <h3>Mapping exhibitions near you!</h3>
       <CircularProgress className={classes.progress} />
     </div>
   );
