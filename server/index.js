@@ -29,8 +29,8 @@ const createApp = () => {
 };
 
 const startLisening = () => {
-  const server = app.listen(8081, () =>
-    console.log(`Serving it up on port 8081`)
+  const server = app.listen(resource.env.PORT, () =>
+    console.log(`Serving it up on resource.env.PORT`)
   );
 };
 
