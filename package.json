@@ -2,7 +2,7 @@
   "name": "artopod",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://prod.82tzcisbbm.us-east-1.elasticbeanstalk.com/",
   "dependencies": {
     "@material-ui/core": "^4.4.3",
     "@material-ui/icons": "^4.4.3",
@@ -32,7 +32,8 @@
     "start-dev": "npm run start-server & npm run start & npm run build-watch",
     "start-server": "node server/index.js",
     "build-watch": "webpack -w",
-    "seed": "node server/seed.js"
+    "seed": "node server/seed.js",
+    "homepage": "http://siwinlo.github.io/Artopod"
   },
   "eslintConfig": {
     "extends": "react-app"
