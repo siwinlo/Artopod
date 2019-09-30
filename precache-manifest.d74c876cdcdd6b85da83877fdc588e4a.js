@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8b71c8cc0f480797f7acf5d8c71a13bb",
+    "revision": "66a11560132b3c40e6c6e3bc85be98cc",
     "url": "/Artopod/index.html"
   },
   {
-    "revision": "606fec555fd7be67901e",
-    "url": "/Artopod/static/css/main.dae827ec.chunk.css"
+    "revision": "00f6842ab5d0b75425f7",
+    "url": "/Artopod/static/css/main.36530f2e.chunk.css"
   },
   {
     "revision": "ef035e2183396423e59a",
     "url": "/Artopod/static/js/2.3f9a5ba8.chunk.js"
   },
   {
-    "revision": "606fec555fd7be67901e",
+    "revision": "00f6842ab5d0b75425f7",
     "url": "/Artopod/static/js/main.ff43db4c.chunk.js"
   },
   {
