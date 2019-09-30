@@ -3,10 +3,10 @@
 ## User story
 
 Artopod is a single-page application by
-<a href="https://siwinlo.github.io"> Siwin Lo</a>, which finds the 5
-closes art exhibitions to you, and lets you take it from there.
+<a href="https://siwinlo.github.io"> Siwin Lo</a>, which finds 5
+art exhibitions close to you, and lets you take it from there.
 
-Perfect for a typical New York lunch-hour, and inspired by
+Perfect for a New York-paced lunch-hour and inspired by
 location-based apps like Tinder and Yelp, Artopod helps users find art
 exhibitions close by without the overwhelming choice and cumbersome
 nature of traditional listings.
