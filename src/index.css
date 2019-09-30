@@ -10,7 +10,7 @@ a:hover {
 
 .about {
   margin: 0;
-  padding: 0.5em;
+  padding: 0 0.5em 0 0.5em;
 }
 
 body {
@@ -88,13 +88,16 @@ label {
   display: grid;
   height: 80vh;
   grid-template-columns: 3fr 2fr;
-  grid-template-areas: map map list;
+  grid-template-areas: map map map list list;
 }
 
 #map {
   z-index: 0;
   height: 100vh;
-  width: 70vw;
+  width: 60vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .map-container {
@@ -189,5 +192,6 @@ p {
   #map {
     height: 65vh;
     width: 100%;
+    position: static;
   }
 }

@@ -39,7 +39,9 @@ class List extends React.Component {
       <div>
         <div className="banner">
           <h1 onClick={this.toggleAbout}>Artopod</h1>
-          <div className="about">{this.state.about ? <About /> : null}</div>
+          <div className="about" onClick={this.toggleAbout}>
+            {this.state.about ? <About /> : null}
+          </div>
         </div>
         <div className="list-container">
           {this.props.selected.length > 0 ? (
