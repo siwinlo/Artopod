@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Artopod/precache-manifest.fad2e23400bb6e5b8cf221ee569492cf.js"
+  "/Artopod/precache-manifest.526fd09307f2400a9bc2234d6507210e.js"
 );
 
 self.addEventListener('message', (event) => {
