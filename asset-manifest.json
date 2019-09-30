@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Artopod/static/css/main.36530f2e.chunk.css",
-    "main.js": "/Artopod/static/js/main.ff43db4c.chunk.js",
-    "main.js.map": "/Artopod/static/js/main.ff43db4c.chunk.js.map",
+    "main.js": "/Artopod/static/js/main.2ea72bad.chunk.js",
+    "main.js.map": "/Artopod/static/js/main.2ea72bad.chunk.js.map",
     "runtime-main.js": "/Artopod/static/js/runtime-main.1b824805.js",
     "runtime-main.js.map": "/Artopod/static/js/runtime-main.1b824805.js.map",
     "static/js/2.3f9a5ba8.chunk.js": "/Artopod/static/js/2.3f9a5ba8.chunk.js",
     "static/js/2.3f9a5ba8.chunk.js.map": "/Artopod/static/js/2.3f9a5ba8.chunk.js.map",
     "index.html": "/Artopod/index.html",
-    "precache-manifest.d74c876cdcdd6b85da83877fdc588e4a.js": "/Artopod/precache-manifest.d74c876cdcdd6b85da83877fdc588e4a.js",
+    "precache-manifest.5cf8aadbe8b8dbb80e870862b08f5765.js": "/Artopod/precache-manifest.5cf8aadbe8b8dbb80e870862b08f5765.js",
     "service-worker.js": "/Artopod/service-worker.js",
     "static/css/main.36530f2e.chunk.css.map": "/Artopod/static/css/main.36530f2e.chunk.css.map"
   }
