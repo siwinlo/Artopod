@@ -1,5 +1,6 @@
 import React from "react";
 import { DateTime } from "luxon";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
 
 function SingleExhibition(props) {
   const exh = props.exh;
@@ -37,6 +38,9 @@ function SingleExhibition(props) {
       </p>
       <p>{exh.galleryEmail}</p>
       <p>{exh.phone}</p>
+      <div className="expand">
+        <ExpandLessIcon />
+      </div>
     </div>
   );
 }

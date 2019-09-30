@@ -41,6 +41,14 @@ em {
   font-size: 1.2em;
   font-weight: 700;
 }
+
+.expand {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  color: lightgray;
+}
+
 form {
   width: 100%;
 }

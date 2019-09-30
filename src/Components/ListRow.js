@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deselectExhibition } from "../store/reducer";
-
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox";
 import SingleExhibition from "./SingleExhibition";
 
@@ -38,6 +38,9 @@ class ListRow extends React.Component {
 
               <p>{this.props.row.hours}</p>
               <p>{this.props.row.distance.toFixed(2)}mi away</p>
+              <div className="expand">
+                <ExpandMoreIcon />
+              </div>
             </div>
           ) : (
             <SingleExhibition exh={this.props.row} />
