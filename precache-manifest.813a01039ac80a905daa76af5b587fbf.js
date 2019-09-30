@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "96b86c1ca8d1d375dd4c9b10e69d2865",
+    "revision": "e796554899e78fb62cb28432e861237b",
     "url": "/Artopod/index.html"
   },
   {
