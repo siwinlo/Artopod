@@ -1,0 +1,14 @@
+service: Artopod
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  timeout: 900
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+
+functions:
+  scrape:
+    handler: exhGetterLambda.getter
+    events:
+      - schedule: rate(1 hour)
