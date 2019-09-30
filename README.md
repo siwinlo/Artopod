@@ -2,25 +2,31 @@
 
 ## User story
 
-As a resident of New York, I want to see art but don't know when I will get a chance to see it, or what is nearby. Arthopod allows users to provide their location and will return art exhibitions that are close by (1 mile, 3 mile) and currently open.
+Artopod is a single-page application by
+<a href="https://siwinlo.github.io"> Siwin Lo</a>, which finds the 5
+closes art exhibitions to you, and lets you take it from there.
 
-## Front End
+Perfect for a typical New York lunch-hour, and inspired by
+location-based apps like Tinder and Yelp, Artopod helps users find art
+exhibitions close by without the overwhelming choice and cumbersome
+nature of traditional listings.
 
-- React Components
-  - [ ] Map View
-    - [ ] Google Maps
-  - [ ] List View
-  - [ ] Single Exhibition
-  - [ ] About
+## Stack
 
-## Back End
+This app was made using:
 
-- Tier 1
-  - [ ] Local Node parser
-  - [ ] Local PostgreSQL
-- Tier 2
-  - [ ] Parser on AWS Lambda
-  - [ ] Database on AWS RDS
+- React
+- Redux
+- Google Maps API
+- Javascript
+- Node.js
+- Express
+- Sequelize
+- Postgres
+- AWS Lambda
+- AWS RDS
+- Heroku
+- GitHub Projects
 
 # Create React App Readme
 
